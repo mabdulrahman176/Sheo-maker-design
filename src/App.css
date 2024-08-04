@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+body, html {
+  overflow-x: hidden;
 }
+/* Slide Animation for larger screens */
+@media (min-width: 1020px) {
+  .slide-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  .slide-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .slide-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Slide Animation for smaller screens (768px and less) */
+@media (max-width: 768px) {
+  .slide-enter {
+    opacity: 0;
+    transform: translateY(100%);
   }
-  to {
-    transform: rotate(360deg);
+
+  .slide-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  .slide-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .slide-exit-active {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 300ms, transform 300ms;
   }
 }
